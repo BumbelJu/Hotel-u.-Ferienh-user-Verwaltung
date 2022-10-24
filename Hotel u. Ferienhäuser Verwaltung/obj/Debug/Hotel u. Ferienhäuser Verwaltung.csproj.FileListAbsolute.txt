@@ -1,0 +1,10 @@
+C:\Users\justi\source\repos\Hotel u. Ferienhäuser Verwaltung\Hotel u. Ferienhäuser Verwaltung\bin\Debug\Hotel_u.Ferienhäuser_Verwaltung.exe.config
+C:\Users\justi\source\repos\Hotel u. Ferienhäuser Verwaltung\Hotel u. Ferienhäuser Verwaltung\bin\Debug\Hotel_u.Ferienhäuser_Verwaltung.exe
+C:\Users\justi\source\repos\Hotel u. Ferienhäuser Verwaltung\Hotel u. Ferienhäuser Verwaltung\bin\Debug\Hotel_u.Ferienhäuser_Verwaltung.pdb
+C:\Users\justi\source\repos\Hotel u. Ferienhäuser Verwaltung\Hotel u. Ferienhäuser Verwaltung\obj\Debug\Hotel u. Ferienhäuser Verwaltung.csproj.AssemblyReference.cache
+C:\Users\justi\source\repos\Hotel u. Ferienhäuser Verwaltung\Hotel u. Ferienhäuser Verwaltung\obj\Debug\Hotel_u.Ferienhäuser_Verwaltung.Form1.resources
+C:\Users\justi\source\repos\Hotel u. Ferienhäuser Verwaltung\Hotel u. Ferienhäuser Verwaltung\obj\Debug\Hotel_u.Ferienhäuser_Verwaltung.Properties.Resources.resources
+C:\Users\justi\source\repos\Hotel u. Ferienhäuser Verwaltung\Hotel u. Ferienhäuser Verwaltung\obj\Debug\Hotel u. Ferienhäuser Verwaltung.csproj.GenerateResource.cache
+C:\Users\justi\source\repos\Hotel u. Ferienhäuser Verwaltung\Hotel u. Ferienhäuser Verwaltung\obj\Debug\Hotel u. Ferienhäuser Verwaltung.csproj.CoreCompileInputs.cache
+C:\Users\justi\source\repos\Hotel u. Ferienhäuser Verwaltung\Hotel u. Ferienhäuser Verwaltung\obj\Debug\Hotel_u.Ferienhäuser_Verwaltung.exe
+C:\Users\justi\source\repos\Hotel u. Ferienhäuser Verwaltung\Hotel u. Ferienhäuser Verwaltung\obj\Debug\Hotel_u.Ferienhäuser_Verwaltung.pdb
