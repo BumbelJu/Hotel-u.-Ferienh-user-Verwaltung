@@ -20,28 +20,105 @@ namespace Hotel_u.Ferienhäuser_Verwaltung
 
 
         //String Variablen 
-        string Bundesland; 
+
 
         //Double Variablen 
-
+        double PreisproNacht;
 
         //Int Variablen 
-
+        int Nächte;
         
         public Form1()
         {
             InitializeComponent();
+            con.ConnectionString = "Provider = Microsoft.Jet.OLEDB.4.0;" + "Data Source = Hotel Verwaltung.mdb";
+            cmd.Connection = con;
+            cmd.CommandText = "Select * From HotelsundFerienwohnungen";
+            Daten();
+            Nächte = 1;
         }
-
+        // Datenbankverbindung herstellen
+        public void Daten()
+        {
+            try
+            {
+                con.Open();
+                Dateneinlesen();
+                con.Close(); 
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+        // Einzelne Daten ins Data Grid View hinzufügen
         public void Dateneinlesen()
         {
-
+            DgvDaten.Rows.Clear();
+            reader = cmd.ExecuteReader();
+            while (reader.Read())
+            {
+                DgvDaten.Rows.Add(reader.GetInt32(0), reader.GetString(1), reader.GetString(2), reader.GetDecimal(3), reader.GetBoolean(4), reader.GetBoolean(5), reader.GetBoolean(6),
+                    reader.GetString(7), reader.GetString(8), reader.GetString(9));
+            }
+            reader.Close();
         }
-        
-
-        private void TxtBundeslandFiltern_TextChanged(object sender, EventArgs e)
+        // Filter Möglichkeiten
+        private void RbHotelsFiltern_CheckedChanged(object sender, EventArgs e)
         {
-            Bundesland = Convert.ToString(TxtBundeslandFiltern.Text);
+            cmd.CommandText = "Select * From HotelsundFerienwohnungen where Art = 'Hotel'";
+            Daten();
         }
+
+        private void RbFerienwohnungenFiltern_CheckedChanged(object sender, EventArgs e)
+        {
+            cmd.CommandText = "Select * From HotelsundFerienwohnungen where Art = 'Ferienwohnung'";
+            Daten();
+        }
+
+        private void RbAlleAnzeigen_CheckedChanged(object sender, EventArgs e)
+        {
+            cmd.CommandText = "Select * From HotelsundFerienwohnungen";
+            Daten();
+        }
+
+        private void CmbBundesländer_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            cmd.CommandText = "Select * From HotelsundFerienwohnungen where Bundesland = '" + CmbBundesländer.SelectedItem.ToString() + "'";
+            Daten();
+        }
+
+        private void panel2_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void NudAnzahlNächte_ValueChanged(object sender, EventArgs e)
+        {
+            Nächte = int.Parse(NudAnzahlNächte.Value.ToString());
+            LblPreis.Text = (PreisproNacht * Nächte).ToString() + "€";
+        }
+
+        private void DgvDaten_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            int index = e.RowIndex;
+            LblBuchenName.Text = "Namen: " + DgvDaten.Rows[index].Cells[2].Value.ToString(); 
+            LblBuchenBundesland.Text = "Bundesland: " + DgvDaten.Rows[index].Cells[7].Value.ToString();
+            LblBuchenStadt.Text = "Stadt: " + DgvDaten.Rows[index].Cells[8].Value.ToString();
+            LblBuchenStraße.Text = "Straße: " + DgvDaten.Rows[index].Cells[9].Value.ToString();
+
+            PreisproNacht = double.Parse(DgvDaten.Rows[index].Cells[3].Value.ToString());
+
+            LblPreis.Text = (PreisproNacht * Nächte).ToString() + "€";
+           
+        }
+
+
+        // Filter Möglichkeiten Ende
     }
 }
