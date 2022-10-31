@@ -29,7 +29,7 @@ namespace Hotel_u.Ferienhäuser_Verwaltung
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.DgvDaten = new System.Windows.Forms.DataGridView();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -50,17 +50,17 @@ namespace Hotel_u.Ferienhäuser_Verwaltung
             this.label3 = new System.Windows.Forms.Label();
             this.RbAlleAnzeigen = new System.Windows.Forms.RadioButton();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.label4 = new System.Windows.Forms.Label();
-            this.LblBuchenName = new System.Windows.Forms.Label();
-            this.LblBuchenStraße = new System.Windows.Forms.Label();
-            this.LblBuchenBundesland = new System.Windows.Forms.Label();
-            this.LblBuchenStadt = new System.Windows.Forms.Label();
-            this.NudAnzahlNächte = new System.Windows.Forms.NumericUpDown();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.LblPreis = new System.Windows.Forms.Label();
-            this.BtnBuchen = new System.Windows.Forms.Button();
             this.BtnBuchungabbrechen = new System.Windows.Forms.Button();
+            this.BtnBuchen = new System.Windows.Forms.Button();
+            this.LblPreis = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.NudAnzahlNächte = new System.Windows.Forms.NumericUpDown();
+            this.LblBuchenStadt = new System.Windows.Forms.Label();
+            this.LblBuchenBundesland = new System.Windows.Forms.Label();
+            this.LblBuchenStraße = new System.Windows.Forms.Label();
+            this.LblBuchenName = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.DgvDaten)).BeginInit();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -112,9 +112,9 @@ namespace Hotel_u.Ferienhäuser_Verwaltung
             // 
             // Column4
             // 
-            dataGridViewCellStyle1.Format = "C2";
-            dataGridViewCellStyle1.NullValue = null;
-            this.Column4.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.Format = "C2";
+            dataGridViewCellStyle2.NullValue = null;
+            this.Column4.DefaultCellStyle = dataGridViewCellStyle2;
             this.Column4.HeaderText = "PreisproNacht";
             this.Column4.Name = "Column4";
             this.Column4.ReadOnly = true;
@@ -310,66 +310,69 @@ namespace Hotel_u.Ferienhäuser_Verwaltung
             this.panel2.TabIndex = 8;
             this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
             // 
-            // label4
+            // BtnBuchungabbrechen
             // 
-            this.label4.BackColor = System.Drawing.Color.Linen;
-            this.label4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label4.Dock = System.Windows.Forms.DockStyle.Top;
-            this.label4.Font = new System.Drawing.Font("Century Schoolbook", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(0, 0);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(544, 25);
-            this.label4.TabIndex = 5;
-            this.label4.Text = "Hotel oder Ferienwohnung buchen";
-            this.label4.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.BtnBuchungabbrechen.BackColor = System.Drawing.Color.Linen;
+            this.BtnBuchungabbrechen.Cursor = System.Windows.Forms.Cursors.Default;
+            this.BtnBuchungabbrechen.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnBuchungabbrechen.Font = new System.Drawing.Font("Century Schoolbook", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnBuchungabbrechen.Location = new System.Drawing.Point(12, 286);
+            this.BtnBuchungabbrechen.Name = "BtnBuchungabbrechen";
+            this.BtnBuchungabbrechen.Size = new System.Drawing.Size(204, 42);
+            this.BtnBuchungabbrechen.TabIndex = 15;
+            this.BtnBuchungabbrechen.Text = "Buchung abbrechen";
+            this.BtnBuchungabbrechen.UseVisualStyleBackColor = false;
+            this.BtnBuchungabbrechen.Click += new System.EventHandler(this.BtnBuchungabbrechen_Click);
             // 
-            // LblBuchenName
+            // BtnBuchen
             // 
-            this.LblBuchenName.AutoSize = true;
-            this.LblBuchenName.BackColor = System.Drawing.Color.Linen;
-            this.LblBuchenName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.LblBuchenName.Font = new System.Drawing.Font("Century Schoolbook", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LblBuchenName.Location = new System.Drawing.Point(12, 45);
-            this.LblBuchenName.Name = "LblBuchenName";
-            this.LblBuchenName.Size = new System.Drawing.Size(70, 25);
-            this.LblBuchenName.TabIndex = 6;
-            this.LblBuchenName.Text = "Name:";
+            this.BtnBuchen.BackColor = System.Drawing.Color.Linen;
+            this.BtnBuchen.Cursor = System.Windows.Forms.Cursors.Default;
+            this.BtnBuchen.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnBuchen.Font = new System.Drawing.Font("Century Schoolbook", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnBuchen.Location = new System.Drawing.Point(348, 286);
+            this.BtnBuchen.Name = "BtnBuchen";
+            this.BtnBuchen.Size = new System.Drawing.Size(183, 42);
+            this.BtnBuchen.TabIndex = 14;
+            this.BtnBuchen.Text = "Buchen";
+            this.BtnBuchen.UseVisualStyleBackColor = false;
+            this.BtnBuchen.Click += new System.EventHandler(this.BtnBuchen_Click);
             // 
-            // LblBuchenStraße
+            // LblPreis
             // 
-            this.LblBuchenStraße.AutoSize = true;
-            this.LblBuchenStraße.BackColor = System.Drawing.Color.Linen;
-            this.LblBuchenStraße.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.LblBuchenStraße.Font = new System.Drawing.Font("Century Schoolbook", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LblBuchenStraße.Location = new System.Drawing.Point(12, 120);
-            this.LblBuchenStraße.Name = "LblBuchenStraße";
-            this.LblBuchenStraße.Size = new System.Drawing.Size(76, 25);
-            this.LblBuchenStraße.TabIndex = 7;
-            this.LblBuchenStraße.Text = "Straße:";
+            this.LblPreis.AutoSize = true;
+            this.LblPreis.BackColor = System.Drawing.Color.Bisque;
+            this.LblPreis.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.LblPreis.Font = new System.Drawing.Font("Century Schoolbook", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LblPreis.Location = new System.Drawing.Point(76, 207);
+            this.LblPreis.Name = "LblPreis";
+            this.LblPreis.Size = new System.Drawing.Size(61, 25);
+            this.LblPreis.TabIndex = 13;
+            this.LblPreis.Text = "0,00€";
             // 
-            // LblBuchenBundesland
+            // label7
             // 
-            this.LblBuchenBundesland.AutoSize = true;
-            this.LblBuchenBundesland.BackColor = System.Drawing.Color.Linen;
-            this.LblBuchenBundesland.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.LblBuchenBundesland.Font = new System.Drawing.Font("Century Schoolbook", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LblBuchenBundesland.Location = new System.Drawing.Point(12, 70);
-            this.LblBuchenBundesland.Name = "LblBuchenBundesland";
-            this.LblBuchenBundesland.Size = new System.Drawing.Size(125, 25);
-            this.LblBuchenBundesland.TabIndex = 8;
-            this.LblBuchenBundesland.Text = "Bundesland:";
+            this.label7.AutoSize = true;
+            this.label7.BackColor = System.Drawing.Color.Bisque;
+            this.label7.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label7.Font = new System.Drawing.Font("Century Schoolbook", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(12, 207);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(69, 25);
+            this.label7.TabIndex = 12;
+            this.label7.Text = "Preis:";
             // 
-            // LblBuchenStadt
+            // label5
             // 
-            this.LblBuchenStadt.AutoSize = true;
-            this.LblBuchenStadt.BackColor = System.Drawing.Color.Linen;
-            this.LblBuchenStadt.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.LblBuchenStadt.Font = new System.Drawing.Font("Century Schoolbook", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LblBuchenStadt.Location = new System.Drawing.Point(12, 95);
-            this.LblBuchenStadt.Name = "LblBuchenStadt";
-            this.LblBuchenStadt.Size = new System.Drawing.Size(65, 25);
-            this.LblBuchenStadt.TabIndex = 9;
-            this.LblBuchenStadt.Text = "Stadt:";
+            this.label5.AutoSize = true;
+            this.label5.BackColor = System.Drawing.Color.Linen;
+            this.label5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label5.Font = new System.Drawing.Font("Century Schoolbook", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(12, 162);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(178, 25);
+            this.label5.TabIndex = 11;
+            this.label5.Text = "Anzahl der Nächte";
             // 
             // NudAnzahlNächte
             // 
@@ -395,67 +398,66 @@ namespace Hotel_u.Ferienhäuser_Verwaltung
             0});
             this.NudAnzahlNächte.ValueChanged += new System.EventHandler(this.NudAnzahlNächte_ValueChanged);
             // 
-            // label5
+            // LblBuchenStadt
             // 
-            this.label5.AutoSize = true;
-            this.label5.BackColor = System.Drawing.Color.Linen;
-            this.label5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label5.Font = new System.Drawing.Font("Century Schoolbook", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(12, 162);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(178, 25);
-            this.label5.TabIndex = 11;
-            this.label5.Text = "Anzahl der Nächte";
+            this.LblBuchenStadt.AutoSize = true;
+            this.LblBuchenStadt.BackColor = System.Drawing.Color.Linen;
+            this.LblBuchenStadt.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.LblBuchenStadt.Font = new System.Drawing.Font("Century Schoolbook", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LblBuchenStadt.Location = new System.Drawing.Point(12, 95);
+            this.LblBuchenStadt.Name = "LblBuchenStadt";
+            this.LblBuchenStadt.Size = new System.Drawing.Size(65, 25);
+            this.LblBuchenStadt.TabIndex = 9;
+            this.LblBuchenStadt.Text = "Stadt:";
             // 
-            // label7
+            // LblBuchenBundesland
             // 
-            this.label7.AutoSize = true;
-            this.label7.BackColor = System.Drawing.Color.Bisque;
-            this.label7.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label7.Font = new System.Drawing.Font("Century Schoolbook", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(12, 207);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(69, 25);
-            this.label7.TabIndex = 12;
-            this.label7.Text = "Preis:";
+            this.LblBuchenBundesland.AutoSize = true;
+            this.LblBuchenBundesland.BackColor = System.Drawing.Color.Linen;
+            this.LblBuchenBundesland.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.LblBuchenBundesland.Font = new System.Drawing.Font("Century Schoolbook", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LblBuchenBundesland.Location = new System.Drawing.Point(12, 70);
+            this.LblBuchenBundesland.Name = "LblBuchenBundesland";
+            this.LblBuchenBundesland.Size = new System.Drawing.Size(125, 25);
+            this.LblBuchenBundesland.TabIndex = 8;
+            this.LblBuchenBundesland.Text = "Bundesland:";
             // 
-            // LblPreis
+            // LblBuchenStraße
             // 
-            this.LblPreis.AutoSize = true;
-            this.LblPreis.BackColor = System.Drawing.Color.Bisque;
-            this.LblPreis.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.LblPreis.Font = new System.Drawing.Font("Century Schoolbook", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LblPreis.Location = new System.Drawing.Point(76, 207);
-            this.LblPreis.Name = "LblPreis";
-            this.LblPreis.Size = new System.Drawing.Size(61, 25);
-            this.LblPreis.TabIndex = 13;
-            this.LblPreis.Text = "0,00€";
+            this.LblBuchenStraße.AutoSize = true;
+            this.LblBuchenStraße.BackColor = System.Drawing.Color.Linen;
+            this.LblBuchenStraße.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.LblBuchenStraße.Font = new System.Drawing.Font("Century Schoolbook", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LblBuchenStraße.Location = new System.Drawing.Point(12, 120);
+            this.LblBuchenStraße.Name = "LblBuchenStraße";
+            this.LblBuchenStraße.Size = new System.Drawing.Size(76, 25);
+            this.LblBuchenStraße.TabIndex = 7;
+            this.LblBuchenStraße.Text = "Straße:";
             // 
-            // BtnBuchen
+            // LblBuchenName
             // 
-            this.BtnBuchen.BackColor = System.Drawing.Color.Linen;
-            this.BtnBuchen.Cursor = System.Windows.Forms.Cursors.Default;
-            this.BtnBuchen.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnBuchen.Font = new System.Drawing.Font("Century Schoolbook", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnBuchen.Location = new System.Drawing.Point(348, 286);
-            this.BtnBuchen.Name = "BtnBuchen";
-            this.BtnBuchen.Size = new System.Drawing.Size(183, 42);
-            this.BtnBuchen.TabIndex = 14;
-            this.BtnBuchen.Text = "Buchen";
-            this.BtnBuchen.UseVisualStyleBackColor = false;
+            this.LblBuchenName.AutoSize = true;
+            this.LblBuchenName.BackColor = System.Drawing.Color.Linen;
+            this.LblBuchenName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.LblBuchenName.Font = new System.Drawing.Font("Century Schoolbook", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LblBuchenName.Location = new System.Drawing.Point(12, 45);
+            this.LblBuchenName.Name = "LblBuchenName";
+            this.LblBuchenName.Size = new System.Drawing.Size(70, 25);
+            this.LblBuchenName.TabIndex = 6;
+            this.LblBuchenName.Text = "Name:";
             // 
-            // BtnBuchungabbrechen
+            // label4
             // 
-            this.BtnBuchungabbrechen.BackColor = System.Drawing.Color.Linen;
-            this.BtnBuchungabbrechen.Cursor = System.Windows.Forms.Cursors.Default;
-            this.BtnBuchungabbrechen.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnBuchungabbrechen.Font = new System.Drawing.Font("Century Schoolbook", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnBuchungabbrechen.Location = new System.Drawing.Point(12, 286);
-            this.BtnBuchungabbrechen.Name = "BtnBuchungabbrechen";
-            this.BtnBuchungabbrechen.Size = new System.Drawing.Size(204, 42);
-            this.BtnBuchungabbrechen.TabIndex = 15;
-            this.BtnBuchungabbrechen.Text = "Buchung abbrechen";
-            this.BtnBuchungabbrechen.UseVisualStyleBackColor = false;
+            this.label4.BackColor = System.Drawing.Color.Linen;
+            this.label4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label4.Dock = System.Windows.Forms.DockStyle.Top;
+            this.label4.Font = new System.Drawing.Font("Century Schoolbook", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(0, 0);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(544, 25);
+            this.label4.TabIndex = 5;
+            this.label4.Text = "Hotel oder Ferienwohnung buchen";
+            this.label4.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // Form1
             // 

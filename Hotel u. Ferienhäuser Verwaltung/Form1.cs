@@ -27,7 +27,8 @@ namespace Hotel_u.Ferienhäuser_Verwaltung
 
         //Int Variablen 
         int Nächte;
-        
+        int index;
+
         public Form1()
         {
             InitializeComponent();
@@ -106,7 +107,7 @@ namespace Hotel_u.Ferienhäuser_Verwaltung
 
         private void DgvDaten_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            int index = e.RowIndex;
+            index = e.RowIndex;
             LblBuchenName.Text = "Namen: " + DgvDaten.Rows[index].Cells[2].Value.ToString(); 
             LblBuchenBundesland.Text = "Bundesland: " + DgvDaten.Rows[index].Cells[7].Value.ToString();
             LblBuchenStadt.Text = "Stadt: " + DgvDaten.Rows[index].Cells[8].Value.ToString();
@@ -116,6 +117,25 @@ namespace Hotel_u.Ferienhäuser_Verwaltung
 
             LblPreis.Text = (PreisproNacht * Nächte).ToString() + "€";
            
+        }
+
+        private void BtnBuchungabbrechen_Click(object sender, EventArgs e)
+        {
+            LblBuchenName.Text = "Namen: ";
+            LblBuchenBundesland.Text = "Bundesland: ";
+            LblBuchenStadt.Text = "Stadt: ";
+            LblBuchenStraße.Text = "Straße: ";
+            LblPreis.Text = "0.00€";
+            NudAnzahlNächte.Value = 1; 
+        }
+
+        private void BtnBuchen_Click(object sender, EventArgs e)
+        {
+            Buchung bg = new Buchung(DgvDaten.Rows[index].Cells[2].Value.ToString(), DgvDaten.Rows[index].Cells[7].Value.ToString(), 
+                DgvDaten.Rows[index].Cells[9].Value.ToString(), DgvDaten.Rows[index].Cells[8].Value.ToString(),
+                Nächte,LblPreis.Text);
+            bg.Show();
+            this.Visible = false; 
         }
 
 

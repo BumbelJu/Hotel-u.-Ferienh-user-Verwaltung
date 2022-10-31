@@ -8,3 +8,6 @@ C:\Users\justi\source\repos\Hotel u. Ferienhäuser Verwaltung\Hotel u. Ferienhä
 C:\Users\justi\source\repos\Hotel u. Ferienhäuser Verwaltung\Hotel u. Ferienhäuser Verwaltung\obj\Debug\Hotel u. Ferienhäuser Verwaltung.csproj.CoreCompileInputs.cache
 C:\Users\justi\source\repos\Hotel u. Ferienhäuser Verwaltung\Hotel u. Ferienhäuser Verwaltung\obj\Debug\Hotel_u.Ferienhäuser_Verwaltung.exe
 C:\Users\justi\source\repos\Hotel u. Ferienhäuser Verwaltung\Hotel u. Ferienhäuser Verwaltung\obj\Debug\Hotel_u.Ferienhäuser_Verwaltung.pdb
+C:\Users\justi\source\repos\Hotel u. Ferienhäuser Verwaltung\Hotel u. Ferienhäuser Verwaltung\bin\Debug\CustomControls.dll
+C:\Users\justi\source\repos\Hotel u. Ferienhäuser Verwaltung\Hotel u. Ferienhäuser Verwaltung\obj\Debug\Hotel_u.Ferienhäuser_Verwaltung.Buchung.resources
+C:\Users\justi\source\repos\Hotel u. Ferienhäuser Verwaltung\Hotel u. Ferienhäuser Verwaltung\obj\Debug\Hotel u. Ferienhäuser Verwaltung.csproj.CopyComplete
