@@ -29,7 +29,10 @@ namespace Hotel_u.Ferienhäuser_Verwaltung
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Buchung));
             this.PBuchungsVorlage = new System.Windows.Forms.Panel();
+            this.label6 = new System.Windows.Forms.Label();
+            this.lblPreis = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -38,11 +41,11 @@ namespace Hotel_u.Ferienhäuser_Verwaltung
             this.lblStraße = new System.Windows.Forms.Label();
             this.lblAnzahlderNächte = new System.Windows.Forms.Label();
             this.lblName = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.BtnPDF = new System.Windows.Forms.Button();
             this.BtnWeiterSuchen = new System.Windows.Forms.Button();
-            this.lblPreis = new System.Windows.Forms.Label();
+            this.printDocument1 = new System.Drawing.Printing.PrintDocument();
+            this.printPreviewDialog1 = new System.Windows.Forms.PrintPreviewDialog();
             this.PBuchungsVorlage.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -50,6 +53,7 @@ namespace Hotel_u.Ferienhäuser_Verwaltung
             // 
             this.PBuchungsVorlage.BackColor = System.Drawing.Color.White;
             this.PBuchungsVorlage.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.PBuchungsVorlage.Controls.Add(this.label6);
             this.PBuchungsVorlage.Controls.Add(this.lblPreis);
             this.PBuchungsVorlage.Controls.Add(this.label5);
             this.PBuchungsVorlage.Controls.Add(this.label4);
@@ -59,20 +63,42 @@ namespace Hotel_u.Ferienhäuser_Verwaltung
             this.PBuchungsVorlage.Controls.Add(this.lblStraße);
             this.PBuchungsVorlage.Controls.Add(this.lblAnzahlderNächte);
             this.PBuchungsVorlage.Controls.Add(this.lblName);
-            this.PBuchungsVorlage.Controls.Add(this.label2);
             this.PBuchungsVorlage.Location = new System.Drawing.Point(12, 119);
             this.PBuchungsVorlage.Name = "PBuchungsVorlage";
             this.PBuchungsVorlage.Size = new System.Drawing.Size(562, 640);
             this.PBuchungsVorlage.TabIndex = 0;
             // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Century", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(30, 446);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(434, 140);
+            this.label6.TabIndex = 10;
+            this.label6.Text = resources.GetString("label6.Text");
+            // 
+            // lblPreis
+            // 
+            this.lblPreis.AutoSize = true;
+            this.lblPreis.BackColor = System.Drawing.Color.Linen;
+            this.lblPreis.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lblPreis.Font = new System.Drawing.Font("Rockwell", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPreis.Location = new System.Drawing.Point(56, 320);
+            this.lblPreis.Name = "lblPreis";
+            this.lblPreis.Size = new System.Drawing.Size(63, 23);
+            this.lblPreis.TabIndex = 9;
+            this.lblPreis.Text = "Preis:";
+            // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(43, 383);
+            this.label5.Font = new System.Drawing.Font("Century", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(31, 395);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(35, 13);
+            this.label5.Size = new System.Drawing.Size(228, 20);
             this.label5.TabIndex = 8;
-            this.label5.Text = "label5";
+            this.label5.Text = "Sehr geehrte/r Kundin/Kunde";
             // 
             // label4
             // 
@@ -148,14 +174,6 @@ namespace Hotel_u.Ferienhäuser_Verwaltung
             this.lblName.TabIndex = 0;
             this.lblName.Text = "Name: ";
             // 
-            // label2
-            // 
-            this.label2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label2.Location = new System.Drawing.Point(34, 83);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(482, 280);
-            this.label2.TabIndex = 5;
-            // 
             // label1
             // 
             this.label1.BackColor = System.Drawing.Color.Linen;
@@ -180,6 +198,7 @@ namespace Hotel_u.Ferienhäuser_Verwaltung
             this.BtnPDF.TabIndex = 16;
             this.BtnPDF.Text = "Buchung herunterladen";
             this.BtnPDF.UseVisualStyleBackColor = false;
+            this.BtnPDF.Click += new System.EventHandler(this.BtnPDF_Click);
             // 
             // BtnWeiterSuchen
             // 
@@ -195,17 +214,15 @@ namespace Hotel_u.Ferienhäuser_Verwaltung
             this.BtnWeiterSuchen.UseVisualStyleBackColor = false;
             this.BtnWeiterSuchen.Click += new System.EventHandler(this.BtnWeiterSuchen_Click);
             // 
-            // lblPreis
+            // printPreviewDialog1
             // 
-            this.lblPreis.AutoSize = true;
-            this.lblPreis.BackColor = System.Drawing.Color.Linen;
-            this.lblPreis.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lblPreis.Font = new System.Drawing.Font("Rockwell", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPreis.Location = new System.Drawing.Point(56, 320);
-            this.lblPreis.Name = "lblPreis";
-            this.lblPreis.Size = new System.Drawing.Size(63, 23);
-            this.lblPreis.TabIndex = 9;
-            this.lblPreis.Text = "Preis:";
+            this.printPreviewDialog1.AutoScrollMargin = new System.Drawing.Size(0, 0);
+            this.printPreviewDialog1.AutoScrollMinSize = new System.Drawing.Size(0, 0);
+            this.printPreviewDialog1.ClientSize = new System.Drawing.Size(400, 300);
+            this.printPreviewDialog1.Enabled = true;
+            this.printPreviewDialog1.Icon = ((System.Drawing.Icon)(resources.GetObject("printPreviewDialog1.Icon")));
+            this.printPreviewDialog1.Name = "printPreviewDialog1";
+            this.printPreviewDialog1.Visible = false;
             // 
             // Buchung
             // 
@@ -243,7 +260,9 @@ namespace Hotel_u.Ferienhäuser_Verwaltung
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label lblPreis;
+        private System.Windows.Forms.Label label6;
+        private System.Drawing.Printing.PrintDocument printDocument1;
+        private System.Windows.Forms.PrintPreviewDialog printPreviewDialog1;
     }
 }
