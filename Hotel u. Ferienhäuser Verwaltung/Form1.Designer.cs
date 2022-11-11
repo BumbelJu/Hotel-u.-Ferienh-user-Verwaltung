@@ -29,7 +29,7 @@ namespace Hotel_u.Ferienhäuser_Verwaltung
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.DgvDaten = new System.Windows.Forms.DataGridView();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -61,6 +61,7 @@ namespace Hotel_u.Ferienhäuser_Verwaltung
             this.LblBuchenStraße = new System.Windows.Forms.Label();
             this.LblBuchenName = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
+            this.BtnAbmelden = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.DgvDaten)).BeginInit();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -112,9 +113,9 @@ namespace Hotel_u.Ferienhäuser_Verwaltung
             // 
             // Column4
             // 
-            dataGridViewCellStyle2.Format = "C2";
-            dataGridViewCellStyle2.NullValue = null;
-            this.Column4.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle1.Format = "C2";
+            dataGridViewCellStyle1.NullValue = null;
+            this.Column4.DefaultCellStyle = dataGridViewCellStyle1;
             this.Column4.HeaderText = "PreisproNacht";
             this.Column4.Name = "Column4";
             this.Column4.ReadOnly = true;
@@ -308,7 +309,6 @@ namespace Hotel_u.Ferienhäuser_Verwaltung
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(546, 346);
             this.panel2.TabIndex = 8;
-            this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
             // 
             // BtnBuchungabbrechen
             // 
@@ -459,12 +459,27 @@ namespace Hotel_u.Ferienhäuser_Verwaltung
             this.label4.Text = "Hotel oder Ferienwohnung buchen";
             this.label4.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
+            // BtnAbmelden
+            // 
+            this.BtnAbmelden.BackColor = System.Drawing.Color.Linen;
+            this.BtnAbmelden.Cursor = System.Windows.Forms.Cursors.Default;
+            this.BtnAbmelden.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnAbmelden.Font = new System.Drawing.Font("Century Schoolbook", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnAbmelden.Location = new System.Drawing.Point(12, 612);
+            this.BtnAbmelden.Name = "BtnAbmelden";
+            this.BtnAbmelden.Size = new System.Drawing.Size(256, 43);
+            this.BtnAbmelden.TabIndex = 18;
+            this.BtnAbmelden.Text = "Abmelden";
+            this.BtnAbmelden.UseVisualStyleBackColor = false;
+            this.BtnAbmelden.Click += new System.EventHandler(this.BtnAbmelden_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Azure;
             this.ClientSize = new System.Drawing.Size(1068, 667);
+            this.Controls.Add(this.BtnAbmelden);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.RbAlleAnzeigen);
             this.Controls.Add(this.panel1);
@@ -478,7 +493,7 @@ namespace Hotel_u.Ferienhäuser_Verwaltung
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Hotels und Ferienwohnungen Übersicht";
-            this.Load += new System.EventHandler(this.Form1_Load);
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Form1_FormClosed);
             ((System.ComponentModel.ISupportInitialize)(this.DgvDaten)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
@@ -522,6 +537,7 @@ namespace Hotel_u.Ferienhäuser_Verwaltung
         private System.Windows.Forms.Label LblPreis;
         private System.Windows.Forms.Button BtnBuchungabbrechen;
         private System.Windows.Forms.Button BtnBuchen;
+        private System.Windows.Forms.Button BtnAbmelden;
     }
 }
 

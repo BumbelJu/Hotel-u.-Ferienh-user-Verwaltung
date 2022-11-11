@@ -89,15 +89,7 @@ namespace Hotel_u.Ferienhäuser_Verwaltung
             Daten();
         }
 
-        private void panel2_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void Form1_Load(object sender, EventArgs e)
-        {
-
-        }
+        
 
         private void NudAnzahlNächte_ValueChanged(object sender, EventArgs e)
         {
@@ -138,7 +130,21 @@ namespace Hotel_u.Ferienhäuser_Verwaltung
             this.Visible = false; 
         }
 
+        private void BtnAbmelden_Click(object sender, EventArgs e)
+        {
+            DialogResult dr = MessageBox.Show("Möchten Sie sich Abmelden?", "FRAGE", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (dr == DialogResult.Yes)
+            {
+                LOGIN Lg = new LOGIN();
+                Lg.Show();
+                this.Visible = false;
+            }
+            
+        }
 
-        // Filter Möglichkeiten Ende
+        private void Form1_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Environment.Exit(0);
+        }
     }
 }
