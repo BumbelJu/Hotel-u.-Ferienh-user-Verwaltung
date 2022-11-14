@@ -53,9 +53,10 @@ namespace Hotel_u.Ferienhäuser_Verwaltung
             {
                 if (NameLogin == reader.GetString(1) && Passwort == reader.GetInt32(2))
                 {
-                    Form1 buchen = new Form1();
+                    Form1 buchen = new Form1(NameLogin);
                     buchen.Show();
                     this.Visible = false;
+                  
                     MessageBox.Show("Login Erfolgreich", "INFO", MessageBoxButtons.OK, MessageBoxIcon.Information);
                  
                 }

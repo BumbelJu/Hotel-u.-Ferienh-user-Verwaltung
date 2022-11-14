@@ -20,16 +20,18 @@ namespace Hotel_u.Ferienhäuser_Verwaltung
 
 
         //String Variablen 
-
+        string Kunde;
 
         //Double Variablen 
         double PreisproNacht;
+
+
 
         //Int Variablen 
         int Nächte;
         int index;
 
-        public Form1()
+        public Form1(string K)
         {
             InitializeComponent();
             con.ConnectionString = "Provider = Microsoft.Jet.OLEDB.4.0;" + "Data Source = Hotel Verwaltung.mdb";
@@ -37,7 +39,10 @@ namespace Hotel_u.Ferienhäuser_Verwaltung
             cmd.CommandText = "Select * From HotelsundFerienwohnungen";
             Daten();
             Nächte = 1;
+            Kunde = K; 
+
         }
+       
         // Datenbankverbindung herstellen
         public void Daten()
         {
@@ -125,7 +130,7 @@ namespace Hotel_u.Ferienhäuser_Verwaltung
         {
             Buchung bg = new Buchung(DgvDaten.Rows[index].Cells[2].Value.ToString(), DgvDaten.Rows[index].Cells[7].Value.ToString(), 
                 DgvDaten.Rows[index].Cells[9].Value.ToString(), DgvDaten.Rows[index].Cells[8].Value.ToString(),
-                Nächte,LblPreis.Text);
+                Nächte,LblPreis.Text,Kunde);
             bg.Show();
             this.Visible = false; 
         }

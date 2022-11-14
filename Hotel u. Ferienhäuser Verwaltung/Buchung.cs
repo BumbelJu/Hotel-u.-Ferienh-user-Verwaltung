@@ -9,6 +9,8 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Drawing.Printing;
 
+
+
 namespace Hotel_u.Ferienhäuser_Verwaltung
 {
     public partial class Buchung : Form
@@ -16,21 +18,23 @@ namespace Hotel_u.Ferienhäuser_Verwaltung
 
         private Bitmap memoryimg;
 
-        public Buchung(string N, string B, string Str, string Sta, int Nä, string Pr)
+        
+
+        public Buchung(string N, string B, string Str, string Sta, int Nä, string Pr,string Kunde)
         {
             InitializeComponent();
-           
+
             lblName.Text = "Name: " + N;
             lblBundesland.Text = "Bundesland: " + B;
             lblStadt.Text = "Stadt: " + Sta;
             lblStraße.Text = "Straße: " + Str;
             lblAnzahlderNächte.Text = "Anzahl der Nächte: " + Nä.ToString();
             lblPreis.Text = "Preis: " + Pr;
+            lblKunde.Text = "Sehr geehrter " + Kunde;
         }
-
         private void BtnWeiterSuchen_Click(object sender, EventArgs e)
         {
-            Form1 f1 = new Form1();
+            Form1 f1 = new Form1("test");
             f1.Show();
             this.Visible = false; 
         }
@@ -64,6 +68,18 @@ namespace Hotel_u.Ferienhäuser_Verwaltung
         private void BtnPDF_Click(object sender, EventArgs e)
         {
             Print(this.PBuchungsVorlage);
+            
         }
+
+        private void PBuchungsVorlage_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+
+
+
+
+
     }
 }

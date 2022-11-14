@@ -33,7 +33,7 @@ namespace Hotel_u.Ferienhäuser_Verwaltung
             this.PBuchungsVorlage = new System.Windows.Forms.Panel();
             this.label6 = new System.Windows.Forms.Label();
             this.lblPreis = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
+            this.lblKunde = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.lblBundesland = new System.Windows.Forms.Label();
@@ -46,6 +46,7 @@ namespace Hotel_u.Ferienhäuser_Verwaltung
             this.BtnWeiterSuchen = new System.Windows.Forms.Button();
             this.printDocument1 = new System.Drawing.Printing.PrintDocument();
             this.printPreviewDialog1 = new System.Windows.Forms.PrintPreviewDialog();
+            this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
             this.PBuchungsVorlage.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -55,7 +56,7 @@ namespace Hotel_u.Ferienhäuser_Verwaltung
             this.PBuchungsVorlage.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.PBuchungsVorlage.Controls.Add(this.label6);
             this.PBuchungsVorlage.Controls.Add(this.lblPreis);
-            this.PBuchungsVorlage.Controls.Add(this.label5);
+            this.PBuchungsVorlage.Controls.Add(this.lblKunde);
             this.PBuchungsVorlage.Controls.Add(this.label4);
             this.PBuchungsVorlage.Controls.Add(this.label3);
             this.PBuchungsVorlage.Controls.Add(this.lblBundesland);
@@ -67,6 +68,7 @@ namespace Hotel_u.Ferienhäuser_Verwaltung
             this.PBuchungsVorlage.Name = "PBuchungsVorlage";
             this.PBuchungsVorlage.Size = new System.Drawing.Size(562, 640);
             this.PBuchungsVorlage.TabIndex = 0;
+            this.PBuchungsVorlage.Paint += new System.Windows.Forms.PaintEventHandler(this.PBuchungsVorlage_Paint);
             // 
             // label6
             // 
@@ -90,15 +92,15 @@ namespace Hotel_u.Ferienhäuser_Verwaltung
             this.lblPreis.TabIndex = 9;
             this.lblPreis.Text = "Preis:";
             // 
-            // label5
+            // lblKunde
             // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Century", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(31, 395);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(228, 20);
-            this.label5.TabIndex = 8;
-            this.label5.Text = "Sehr geehrte/r Kundin/Kunde";
+            this.lblKunde.AutoSize = true;
+            this.lblKunde.Font = new System.Drawing.Font("Century", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblKunde.Location = new System.Drawing.Point(31, 395);
+            this.lblKunde.Name = "lblKunde";
+            this.lblKunde.Size = new System.Drawing.Size(228, 20);
+            this.lblKunde.TabIndex = 8;
+            this.lblKunde.Text = "Sehr geehrte/r Kundin/Kunde";
             // 
             // label4
             // 
@@ -257,12 +259,13 @@ namespace Hotel_u.Ferienhäuser_Verwaltung
         private System.Windows.Forms.Label lblStraße;
         private System.Windows.Forms.Label lblAnzahlderNächte;
         private System.Windows.Forms.Label lblName;
-        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label lblKunde;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label lblPreis;
         private System.Windows.Forms.Label label6;
         private System.Drawing.Printing.PrintDocument printDocument1;
         private System.Windows.Forms.PrintPreviewDialog printPreviewDialog1;
+        private System.Windows.Forms.SaveFileDialog saveFileDialog1;
     }
 }
