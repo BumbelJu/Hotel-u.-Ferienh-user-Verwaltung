@@ -29,7 +29,7 @@ namespace Hotel_u.Ferienhäuser_Verwaltung
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.DgvDaten = new System.Windows.Forms.DataGridView();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -113,9 +113,9 @@ namespace Hotel_u.Ferienhäuser_Verwaltung
             // 
             // Column4
             // 
-            dataGridViewCellStyle1.Format = "C2";
-            dataGridViewCellStyle1.NullValue = null;
-            this.Column4.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.Format = "C2";
+            dataGridViewCellStyle2.NullValue = null;
+            this.Column4.DefaultCellStyle = dataGridViewCellStyle2;
             this.Column4.HeaderText = "PreisproNacht";
             this.Column4.Name = "Column4";
             this.Column4.ReadOnly = true;
@@ -305,9 +305,9 @@ namespace Hotel_u.Ferienhäuser_Verwaltung
             this.panel2.Controls.Add(this.LblBuchenStraße);
             this.panel2.Controls.Add(this.LblBuchenName);
             this.panel2.Controls.Add(this.label4);
-            this.panel2.Location = new System.Drawing.Point(510, 309);
+            this.panel2.Location = new System.Drawing.Point(502, 309);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(546, 346);
+            this.panel2.Size = new System.Drawing.Size(554, 346);
             this.panel2.TabIndex = 8;
             // 
             // BtnBuchungabbrechen
@@ -454,7 +454,7 @@ namespace Hotel_u.Ferienhäuser_Verwaltung
             this.label4.Font = new System.Drawing.Font("Century Schoolbook", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.Location = new System.Drawing.Point(0, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(544, 25);
+            this.label4.Size = new System.Drawing.Size(552, 25);
             this.label4.TabIndex = 5;
             this.label4.Text = "Hotel oder Ferienwohnung buchen";
             this.label4.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -465,9 +465,9 @@ namespace Hotel_u.Ferienhäuser_Verwaltung
             this.BtnAbmelden.Cursor = System.Windows.Forms.Cursors.Default;
             this.BtnAbmelden.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnAbmelden.Font = new System.Drawing.Font("Century Schoolbook", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnAbmelden.Location = new System.Drawing.Point(12, 612);
+            this.BtnAbmelden.Location = new System.Drawing.Point(12, 618);
             this.BtnAbmelden.Name = "BtnAbmelden";
-            this.BtnAbmelden.Size = new System.Drawing.Size(256, 43);
+            this.BtnAbmelden.Size = new System.Drawing.Size(133, 37);
             this.BtnAbmelden.TabIndex = 18;
             this.BtnAbmelden.Text = "Abmelden";
             this.BtnAbmelden.UseVisualStyleBackColor = false;
