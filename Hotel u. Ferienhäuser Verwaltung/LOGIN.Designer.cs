@@ -36,6 +36,7 @@ namespace Hotel_u.Ferienhäuser_Verwaltung
             this.TxtPasswort = new System.Windows.Forms.TextBox();
             this.BtnAnmelden = new System.Windows.Forms.Button();
             this.BtnRegistrieren = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label4
@@ -121,12 +122,25 @@ namespace Hotel_u.Ferienhäuser_Verwaltung
             this.BtnRegistrieren.UseVisualStyleBackColor = false;
             this.BtnRegistrieren.Click += new System.EventHandler(this.BtnRegistrieren_Click);
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Linen;
+            this.label1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label1.Font = new System.Drawing.Font("Century Schoolbook", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(0, 39);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(247, 18);
+            this.label1.TabIndex = 19;
+            this.label1.Text = "Test Konto : Name = \"Test\" PW=\"1234\"";
+            // 
             // LOGIN
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Azure;
             this.ClientSize = new System.Drawing.Size(431, 343);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.BtnRegistrieren);
             this.Controls.Add(this.BtnAnmelden);
             this.Controls.Add(this.TxtPasswort);
@@ -154,5 +168,6 @@ namespace Hotel_u.Ferienhäuser_Verwaltung
         private System.Windows.Forms.TextBox TxtPasswort;
         private System.Windows.Forms.Button BtnAnmelden;
         private System.Windows.Forms.Button BtnRegistrieren;
+        private System.Windows.Forms.Label label1;
     }
 }
