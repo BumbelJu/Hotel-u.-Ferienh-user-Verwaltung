@@ -12,6 +12,7 @@ namespace Hotel_u.Ferienhäuser_Verwaltung
 {
     public partial class LOGIN : Form
     {
+        int KundenID;       
         string NameLogin;
         int Passwort;
 
@@ -53,7 +54,8 @@ namespace Hotel_u.Ferienhäuser_Verwaltung
             {
                 if (NameLogin == reader.GetString(1) && Passwort == reader.GetInt32(2))
                 {
-                    Form1 buchen = new Form1(NameLogin);
+                    KundenID = reader.GetInt32(0);
+                    Form1 buchen = new Form1(NameLogin,KundenID);
                     buchen.Show();
                     this.Visible = false;
                   

@@ -30,8 +30,9 @@ namespace Hotel_u.Ferienhäuser_Verwaltung
         //Int Variablen 
         int Nächte;
         int index;
+        int KundenID; 
 
-        public Form1(string K)
+        public Form1(string K, int ID)
         {
             InitializeComponent();
             con.ConnectionString = "Provider = Microsoft.Jet.OLEDB.4.0;" + "Data Source = Hotel Verwaltung.mdb";
@@ -39,8 +40,10 @@ namespace Hotel_u.Ferienhäuser_Verwaltung
             cmd.CommandText = "Select * From HotelsundFerienwohnungen";
             Daten();
             Nächte = 1;
-            Kunde = K; 
-
+            Kunde = K;
+            KundenID = ID; 
+            PBewertung.Visible = false;
+            PBuchen.Visible = false; 
         }
        
         // Datenbankverbindung herstellen
@@ -69,6 +72,33 @@ namespace Hotel_u.Ferienhäuser_Verwaltung
             }
             reader.Close();
         }
+        public void Bewertung()
+        {
+            try
+            {
+                cmd.CommandText = "Select * From Bewertung where HFHNr = " + (index +1);
+                con.Open();
+                Bewertungeinlesen();
+                con.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+}
+        public void Bewertungeinlesen()
+        {
+            DgvBewertung.Rows.Clear();
+            reader = cmd.ExecuteReader();
+            while (reader.Read())
+            {
+                DgvBewertung.Rows.Add(reader.GetInt32(1), reader.GetInt32(2));
+            }
+            reader.Close();
+        }
+
+
+
         // Filter Möglichkeiten
         private void RbHotelsFiltern_CheckedChanged(object sender, EventArgs e)
         {
@@ -104,8 +134,12 @@ namespace Hotel_u.Ferienhäuser_Verwaltung
 
         private void DgvDaten_CellClick(object sender, DataGridViewCellEventArgs e)
         {
+            PBuchen.Visible = true; 
             index = e.RowIndex;
-            LblBuchenName.Text = "Namen: " + DgvDaten.Rows[index].Cells[2].Value.ToString(); 
+            LblBuchenName.Text = "Namen: " + DgvDaten.Rows[index].Cells[2].Value.ToString();
+            // Bewerten
+            LblBewertenName.Text = "Namen: " + DgvDaten.Rows[index].Cells[2].Value.ToString();
+            // Buchen
             LblBuchenBundesland.Text = "Bundesland: " + DgvDaten.Rows[index].Cells[7].Value.ToString();
             LblBuchenStadt.Text = "Stadt: " + DgvDaten.Rows[index].Cells[8].Value.ToString();
             LblBuchenStraße.Text = "Straße: " + DgvDaten.Rows[index].Cells[9].Value.ToString();
@@ -113,6 +147,11 @@ namespace Hotel_u.Ferienhäuser_Verwaltung
             PreisproNacht = double.Parse(DgvDaten.Rows[index].Cells[3].Value.ToString());
 
             LblPreis.Text = (PreisproNacht * Nächte).ToString() + "€";
+
+            // Bewerten
+            cmd.CommandText = "Select * From Bewertung where HFHNr = " + (index +1);
+            Bewertung();
+
            
         }
 
@@ -150,6 +189,27 @@ namespace Hotel_u.Ferienhäuser_Verwaltung
         private void Form1_FormClosed(object sender, FormClosedEventArgs e)
         {
             Environment.Exit(0);
+        }
+
+        private void BtnHotelBewerten_Click(object sender, EventArgs e)
+        {
+            if (PBewertung.Visible == false)
+            {
+                PBewertung.Visible = true;
+            }
+            else
+            {
+                PBewertung.Visible = false;
+            }
+        }
+
+        private void BtnBewerten_Click(object sender, EventArgs e)
+        {
+            con.Open();
+            cmd.CommandText = "Insert Into Bewertung(HFHNr, Punkte) Values(" + (index +1) + ", " + NuBewertung.Value + ")";
+            cmd.ExecuteNonQuery();
+            con.Close();
+            Bewertung();
         }
     }
 }

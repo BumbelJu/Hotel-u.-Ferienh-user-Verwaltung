@@ -34,7 +34,7 @@ namespace Hotel_u.Ferienhäuser_Verwaltung
         }
         private void BtnWeiterSuchen_Click(object sender, EventArgs e)
         {
-            Form1 f1 = new Form1("test");
+            Form1 f1 = new Form1("test",0);
             f1.Show();
             this.Visible = false; 
         }
